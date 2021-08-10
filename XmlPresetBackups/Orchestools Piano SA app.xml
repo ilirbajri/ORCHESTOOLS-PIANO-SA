@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="Orchestools Piano SA app" Bypassed="0"
+           Gain="1" Balance="0" VoiceLimit="64" KillFadeTime="20" IconColour="0"
+           packageName="" BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptButton" id="Button1" value="1"/>
+            <Control type="ScriptButton" id="Button2" value="1"/>
+            <Control type="ScriptButton" id="Button3" value="1"/>
+            <Control type="ScriptButton" id="Button4" value="1"/>
+            <Control type="ScriptButton" id="SETTINGSBTTN" value="0"/>
+            <Control type="ScriptButton" id="ABOUT BUTTON" value="0"/>
+            <Control type="ScriptSlider" id="KEYCTRL 01" value="-38.2"/>
+            <Control type="ScriptSlider" id="KEYCTRL 02" value="-10"/>
+            <Control type="ScriptButton" id="USE TABLE BUTTON" value="0"/>
+          </Content>
+          <UIData Source="Orchestools Piano SA appUIData"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="Dynamics" ID="COMPRESSION" Bypassed="0" GateEnabled="0"
+                   GateThreshold="0" GateAttack="1" GateRelease="100" CompressorEnabled="1"
+                   CompressorThreshold="-13" CompressorRatio="2" CompressorAttack="10"
+                   CompressorRelease="100" LimiterEnabled="0" LimiterThreshold="0"
+                   LimiterAttack="1" LimiterRelease="10" CompressorMakeup="1" LimiterMakeup="0">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+        <Processor Type="Convolution" ID="CONVOLUTION" Bypassed="0" DryGain="-0.199999"
+                   WetGain="-38.2" Latency="0" ImpulseLength="1" ProcessInput="1"
+                   UseBackgroundThread="1" Predelay="19.3" HiCut="1199" Damping="0"
+                   FFTType="0" FileName="{PROJECT_FOLDER}HALL 3.wav" min="0" max="279808"
+                   loopStart="0" loopEnd="279808">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+        <Processor Type="SimpleGain" ID="VOLUME &amp; PAN" Bypassed="0" Gain="-10"
+                   Delay="0" Width="100" Balance="0" InvertPolarity="0">
+          <ChildProcessors>
+            <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+          </ChildProcessors>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="SynthChain" ID="P1ANO II" Bypassed="0" Gain="1" Balance="0"
+               VoiceLimit="256" KillFadeTime="20" IconColour="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="SimpleGain" ID="IMAGE" Bypassed="0" Gain="0" Delay="0"
+                       Width="100" Balance="0" InvertPolarity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="GlobalModulatorContainer" ID="GLOBAL MODS" Bypassed="0"
+                   Gain="0.25" Balance="0" VoiceLimit="256" KillFadeTime="20" IconColour="0">
+          <ChildProcessors>
+            <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Global Modulators" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="Velocity" ID="VELOCITY GLOBAL" Bypassed="0" Intensity="0.5"
+                           UseTable="0" Inverted="0" DecibelMode="0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="EffectChain" ID="FX" Bypassed="0">
+              <ChildProcessors/>
+            </Processor>
+          </ChildProcessors>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+        <Processor Type="StreamingSampler" ID="E1 - BODY" Bypassed="0" Gain="1"
+                   Balance="0" VoiceLimit="128" KillFadeTime="20" IconColour="0"
+                   PreloadSize="8192" BufferSize="4096" VoiceAmount="256" SamplerRepeatMode="1"
+                   RRGroupAmount="2" PitchTracking="1" OneShot="0" CrossfadeGroups="0"
+                   Purged="0" Reversed="0" NumChannels="1" UseStaticMatrix="0" Group0Table=""
+                   Group1Table="" Group2Table="" Group3Table="" Group4Table="" Group5Table=""
+                   Group6Table="" Group7Table="" SampleMapID="PIANO 2 ECO">
+          <ChildProcessors>
+            <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="AHDSR" ID="E1 GAIN ENVELOPE" Bypassed="0" Monophonic="0"
+                           Retrigger="1" Intensity="1" AttackCurve="0.21" DecayCurve="1"
+                           Attack="10" AttackLevel="0" Hold="40000" Decay="40000" Sustain="-90"
+                           Release="2643" EcoMode="1">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors>
+                        <Processor Type="ArrayModulator" ID="UPPER KEYS RELEASE TIME" Bypassed="0"
+                                   Intensity="0.82" SliderPackData="512...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................fPfUNORLHf9bQ1N6yhrcvOlYlI+3PKx7isy2yOdoaR+XPfU8SIFD1OMyLa+T2j38C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="GlobalVoiceStartModulator" ID="E1 VELOCITY SENSITIVITY"
+                           Bypassed="0" Intensity="0.8" UseTable="0" Inverted="0" TableData=""
+                           Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="EffectChain" ID="FX" Bypassed="0">
+              <ChildProcessors>
+                <Processor Type="PolyphonicFilter" ID="E1 FILTER" Bypassed="0" Gain="-18"
+                           Frequency="6422.02" Q="0.3" Mode="15" Quality="2" BipolarIntensity="-0.1">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                               Intensity="1">
+                      <ChildProcessors>
+                        <Processor Type="AHDSR" ID="E1 FILTER ENVELOPE" Bypassed="0" Monophonic="0"
+                                   Retrigger="1" Intensity="1" AttackCurve="0.22" DecayCurve="0.54"
+                                   Attack="1" AttackLevel="0" Hold="0" Decay="20000" Sustain="-33"
+                                   Release="7909" EcoMode="1">
+                          <ChildProcessors>
+                            <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                              <ChildProcessors/>
+                            </Processor>
+                            <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                              <ChildProcessors>
+                                <Processor Type="GlobalVoiceStartModulator" ID="E1 FENV ATTACK LEVEL" Bypassed="0"
+                                           Intensity="0.65" UseTable="0" Inverted="0" TableData="" Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                                  <ChildProcessors/>
+                                </Processor>
+                              </ChildProcessors>
+                            </Processor>
+                            <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                              <ChildProcessors/>
+                            </Processor>
+                            <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                              <ChildProcessors/>
+                            </Processor>
+                            <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                              <ChildProcessors/>
+                            </Processor>
+                          </ChildProcessors>
+                        </Processor>
+                        <Processor Type="GlobalVoiceStartModulator" ID="E1 FILTER VELOCITY FREQUENCY"
+                                   Bypassed="0" Intensity="0.8" UseTable="0" Inverted="0" TableData=""
+                                   Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="Random" ID="RANDOM" Bypassed="0" Intensity="0.5" UseTable="0">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                               Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="SimpleGain" ID="E1 GAIN" Bypassed="0" Gain="0" Delay="0"
+                           Width="100" Balance="0" InvertPolarity="0">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Sample Start" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="Random" ID="E1 RANDOM SMPSTART " Bypassed="0" Intensity="0.7"
+                           UseTable="0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="GlobalVoiceStartModulator" ID="E1 VELOCITY SMPSTART" Bypassed="0"
+                           Intensity="0.86" UseTable="0" Inverted="1" TableData="" Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Group Fade" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+          </ChildProcessors>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <channels>
+            <channelData enabled="1" level="0" suffix=""/>
+          </channels>
+        </Processor>
+        <Processor Type="StreamingSampler" ID="E2 - RESO" Bypassed="0" Gain="1"
+                   Balance="0" VoiceLimit="128" KillFadeTime="20" IconColour="0"
+                   PreloadSize="8192" BufferSize="4096" VoiceAmount="256" SamplerRepeatMode="1"
+                   RRGroupAmount="1" PitchTracking="1" OneShot="0" CrossfadeGroups="0"
+                   Purged="0" Reversed="0" NumChannels="1" UseStaticMatrix="0" Group0Table=""
+                   Group1Table="" Group2Table="" Group3Table="" Group4Table="" Group5Table=""
+                   Group6Table="" Group7Table="" SampleMapID="RESONANCES">
+          <ChildProcessors>
+            <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+              <ChildProcessors>
+                <Processor Type="ReleaseTrigger" ID="E2 RELEASE TRIGGER" Bypassed="0">
+                  <ChildProcessors/>
+                  <Content>
+                    <Control type="ScriptButton" id="TimeAttenuate" value="1"/>
+                    <Control type="ScriptSlider" id="Time" value="4.5"/>
+                    <Control type="ScriptTable" id="TimeTable" value="2" data="24..........9C...vO...f+.........vO"/>
+                  </Content>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="AHDSR" ID="E2 GAIN ENVELOPE" Bypassed="0" Monophonic="0"
+                           Retrigger="1" Intensity="1" AttackCurve="0.17" DecayCurve="0.47"
+                           Attack="10" AttackLevel="0" Hold="0" Decay="2974" Sustain="-90"
+                           Release="17" EcoMode="1">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                      <ChildProcessors>
+                        <Processor Type="GlobalVoiceStartModulator" ID="E2 GENV ATTACK LEVEL" Bypassed="0"
+                                   Intensity="0.33" UseTable="0" Inverted="0" TableData="" Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="GlobalVoiceStartModulator" ID="E2 VELOCITY SENSITIVITY"
+                           Bypassed="1" Intensity="0" UseTable="0" Inverted="0" TableData=""
+                           Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="Random" ID="Random Modulator2" Bypassed="0" Intensity="0.7"
+                           UseTable="0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="EffectChain" ID="FX" Bypassed="0">
+              <ChildProcessors>
+                <Processor Type="PolyphonicFilter" ID="E2 FILTER" Bypassed="0" Gain="-18"
+                           Frequency="19230" Q="0.3" Mode="9" Quality="0" BipolarIntensity="0">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                               Intensity="1">
+                      <ChildProcessors>
+                        <Processor Type="GlobalVoiceStartModulator" ID="E2 FILTER VELOCITY FREQUENCY"
+                                   Bypassed="0" Intensity="1.01" UseTable="0" Inverted="0" TableData=""
+                                   Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="Random" ID="Random Modulator2" Bypassed="0" Intensity="0.8"
+                                   UseTable="0">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                               Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="SimpleGain" ID="E2 GAIN" Bypassed="0" Gain="0" Delay="0"
+                           Width="100" Balance="0" InvertPolarity="0">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Sample Start" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="Random" ID="E2 RANDOM SMPSTART" Bypassed="0" Intensity="0.93"
+                           UseTable="0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Group Fade" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+          </ChildProcessors>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <channels>
+            <channelData enabled="1" level="0" suffix=""/>
+          </channels>
+        </Processor>
+        <Processor Type="StreamingSampler" ID="E3 - NOISE" Bypassed="0" Gain="1"
+                   Balance="0" VoiceLimit="128" KillFadeTime="20" IconColour="0"
+                   PreloadSize="8192" BufferSize="4096" VoiceAmount="256" SamplerRepeatMode="1"
+                   RRGroupAmount="1" PitchTracking="1" OneShot="0" CrossfadeGroups="0"
+                   Purged="0" Reversed="0" NumChannels="1" UseStaticMatrix="0" Group0Table=""
+                   Group1Table="" Group2Table="" Group3Table="" Group4Table="" Group5Table=""
+                   Group6Table="" Group7Table="" SampleMapID="NOISES">
+          <ChildProcessors>
+            <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+              <ChildProcessors>
+                <Processor Type="ReleaseTrigger" ID="E3 RELEASE TRIGGER" Bypassed="1">
+                  <ChildProcessors/>
+                  <Content>
+                    <Control type="ScriptButton" id="TimeAttenuate" value="1"/>
+                    <Control type="ScriptSlider" id="Time" value="4.6"/>
+                    <Control type="ScriptTable" id="TimeTable" value="2" data="24..........9C...vO...f+.........vO"/>
+                  </Content>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="AHDSR" ID="E3 GAIN ENVELOPE" Bypassed="0" Monophonic="0"
+                           Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="19"
+                           AttackLevel="0" Hold="0" Decay="4350" Sustain="-90" Release="13"
+                           EcoMode="1">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                      <ChildProcessors>
+                        <Processor Type="GlobalVoiceStartModulator" ID="E3 GENV VELOCITY ATTACK LEVEL"
+                                   Bypassed="0" Intensity="0.57" UseTable="0" Inverted="0" TableData=""
+                                   Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="GlobalVoiceStartModulator" ID="E3 VELOCITY SENSITIVITY"
+                           Bypassed="1" Intensity="0" UseTable="0" Inverted="0" TableData=""
+                           Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="EffectChain" ID="FX" Bypassed="0">
+              <ChildProcessors>
+                <Processor Type="PolyphonicFilter" ID="E3 FILTER" Bypassed="0" Gain="-18"
+                           Frequency="3889" Q="0.3" Mode="9" Quality="0" BipolarIntensity="0">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                               Intensity="1">
+                      <ChildProcessors>
+                        <Processor Type="GlobalVoiceStartModulator" ID="E3 FILTER VELOCITY FREQUENCY"
+                                   Bypassed="0" Intensity="0.69" UseTable="0" Inverted="0" TableData=""
+                                   Connection="GLOBAL MODS:VELOCITY GLOBAL">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="Random" ID="Random Modulator4" Bypassed="0" Intensity="0.8"
+                                   UseTable="0">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                               Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="SimpleGain" ID="E3 GAIN" Bypassed="0" Gain="-15" Delay="0"
+                           Width="100" Balance="0" InvertPolarity="0">
+                  <ChildProcessors>
+                    <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                    <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1">
+                      <ChildProcessors/>
+                    </Processor>
+                  </ChildProcessors>
+                  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Sample Start" Bypassed="0" Intensity="1">
+              <ChildProcessors>
+                <Processor Type="Random" ID="E3 RANDOM SMPSTART" Bypassed="0" Intensity="0.58"
+                           UseTable="0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="Velocity" ID="E3 VELOCITY SMPSTART" Bypassed="0" Intensity="0.89"
+                           UseTable="0" Inverted="1" DecibelMode="0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Group Fade" Bypassed="0" Intensity="1">
+              <ChildProcessors/>
+            </Processor>
+          </ChildProcessors>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <channels>
+            <channelData enabled="1" level="0" suffix=""/>
+          </channels>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>

@@ -1,0 +1,4 @@
+download sample library from the link:
+
+http://freepats.zenvoid.org/Piano/SalamanderGrandPiano/SalamanderGrandPianoV3+20161209_48khz24bit.tar.xz
+
